@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+html, body {
+  @apply w-full h-full min-h-screen transition-colors duration-300;
+  font-family: 'Kanit', sans-serif;
+}
+
+/* สำหรับขนาดหน้าจอทุกขนาด (Mobile first approach) */
+.custom-class {
+  @apply text-base p-4; /* ขนาดฟอนต์พื้นฐานและ padding */
+}
+
+/* ใช้ responsive utilities ของ Tailwind */
+@media (max-width: 640px) {
+  .custom-class {
+    @apply text-sm p-2; /* ขนาดฟอนต์เล็กและ padding เล็ก */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .custom-class {
+    @apply text-base p-3; /* ขนาดฟอนต์กลางและ padding กลาง */
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-class {
+    @apply text-lg p-4; /* ขนาดฟอนต์ใหญ่และ padding ใหญ่ */
+  }
+}
