@@ -113,6 +113,7 @@ const Report = () => {
               ))
             ) : (
               <tr>
+                
                 <td colSpan="9" className="text-center p-4 text-gray-500">
                   ไม่พบข้อมูล
                 </td>
@@ -126,7 +127,8 @@ const Report = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 sm:w-96">
             <h2 className="text-lg font-bold mb-4">แก้ไขข้อมูล</h2>
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-2">
+              <label className="text-sm font-semibold">ชื่อจริง</label>
               <input
                 type="text"
                 name="firstname"
@@ -135,6 +137,7 @@ const Report = () => {
                 placeholder="ชื่อจริง"
                 className="border p-2 rounded w-full"
               />
+              <label className="text-sm font-semibold">นามสกุล</label>
               <input
                 type="text"
                 name="lastname"
@@ -143,6 +146,7 @@ const Report = () => {
                 placeholder="นามสกุล"
                 className="border p-2 rounded w-full"
               />
+              <label className="text-sm font-semibold">อายุ</label>
               <input
                 type="number"
                 name="age"
@@ -151,6 +155,7 @@ const Report = () => {
                 placeholder="อายุ"
                 className="border p-2 rounded w-full"
               />
+              <label className="text-sm font-semibold">เพศ</label>
               <input
                 type="text"
                 name="gender"
@@ -159,6 +164,7 @@ const Report = () => {
                 placeholder="เพศ"
                 className="border p-2 rounded w-full"
               />
+              <label className="text-sm font-semibold">ความสนใจ</label>
               <input
                 type="text"
                 name="interests"
@@ -167,6 +173,7 @@ const Report = () => {
                 placeholder="ความสนใจ"
                 className="border p-2 rounded w-full"
               />
+              <label className="text-sm font-semibold">คำอธิบาย</label>
               <input
                 type="text"
                 name="description"
@@ -176,19 +183,21 @@ const Report = () => {
                 className="border p-2 rounded w-full"
               />
             </div>
+            
             <div className="mt-4 flex justify-between">
-              <button
-                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-200"
-                onClick={handleUpdate}
-              >
-                บันทึก
-              </button>
               <button
                 className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition duration-200"
                 onClick={() => setEditingUser(null)}
               >
                 ยกเลิก
               </button>
+              <button
+                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-200"
+                onClick={handleUpdate}
+              >
+                บันทึก
+              </button>
+              
             </div>
           </div>
         </div>
