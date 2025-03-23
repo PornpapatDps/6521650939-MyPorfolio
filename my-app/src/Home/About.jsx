@@ -6,19 +6,21 @@ const About = () => {
   return (
     <div className='flex justify-center bg-gray-200 w-full py-10 px-5'>
     
-    <div className="max-w-2xl mx-auto p-5 bg-gray-100 text-gray-800 rounded-lg shadow-xl">
-      <h1 className="text-4xl font-bold text-center mb-8 text-red-600">เกี่ยวกับฉัน</h1>
+    <div className="max-w-2xl mx-auto p-5 bg-gray-100 text-gray-800 rounded-lg shadow-xl ">
+      {/* <h1 className="text-4xl font-bold text-center mb-8 text-red-600">เกี่ยวกับฉัน</h1> */}
       
       {/* Profile Picture */}
-      <div className="text-center mb-6">
+      <div className="text-center mb-15 mt-10">
         <img src={img1} alt="profile" className="w-40 h-40 rounded-full mx-auto border-4 border-red-600 shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out" />
       </div>
-
         
+        <div className="text-center mb-15 mt-10">
+        <h1 className="text-3xl font-bold text-center mb-8 text-red-600">ตำแหน่ง: Frontend Developer</h1>
+      </div>
       {/* Name Section */}
       <div className="bg-white p-4 rounded-lg shadow-md mb-6">
         <h2 className="text-2xl font-semibold mb-2 text-red-600">Name:</h2>
-        <p className="text-xl text-gray-800">นางสาว พรปภัสร์ ดวงเพชรแสง</p>
+        <p className="text-xl text-gray-800">ชื่อ: นางสาว พรปภัสร์ ดวงเพชรแสง</p>
         <p className="text-xl text-gray-800">ชื่อเล่น: ไนซ์</p>
       </div>
 
@@ -31,10 +33,17 @@ const About = () => {
       {/* Education Section */}
       <div className="bg-white p-4 rounded-lg shadow-md mb-6">
         <h2 className="text-2xl font-semibold mb-2 text-red-600">Education:</h2>
-        <p className="text-xl text-gray-800">ระดับมัธยมตอนต้นและปลาย: โรงเรียนสตรีวัดมหาพฤฒาราม ในพระบรมรามชินูปถัมภ์</p>
-        <p className="text-xl text-gray-800">เกรดเฉลี่ยสะสม: 3.27</p>
-        <p className="text-xl text-gray-800">ระดับมหาวิทยาลัย: มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน</p>
-        <p className="text-xl text-gray-800">เกรดเฉลี่ยสะสม: 3.15 (ปัจจุบัน)</p>
+        <p className="text-xl font-medium text-gray-800 mt-2">ระดับมัธยมตอนต้น: </p>
+        <p className="text-xl text-gray-800">โรงเรียนสตรีวัดมหาพฤฒาราม ในพระบรมรามชินูปถัมภ์</p>
+        <p className="text-lg text-gray-800">เกรดเฉลี่ยสะสม: 3.07</p>
+        <p className="text-xl font-medium text-gray-800 mt-2">ระดับมัธยมตอนปลาย: </p>
+        <p className="text-xl text-gray-800">โรงเรียนสตรีวัดมหาพฤฒาราม ในพระบรมรามชินูปถัมภ์</p>
+        <p className="text-lg text-gray-800">แผนการเรียน:คณิตศาสตร์-ภาษาอังกฤษ</p>
+        <p className="text-lg text-gray-800">เกรดเฉลี่ยสะสม: 3.27</p>
+        <p className="text-xl font-medium text-gray-800 mt-2">ระดับมหาวิทยาลัย:</p>
+        <p className="text-xl text-gray-800">มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน</p>
+        <p className="text-lg text-gray-800">สาขาเทคโนโลยีสารสนเทศ</p>
+        <p className="text-lg text-gray-800">เกรดเฉลี่ยสะสม: 3.15 (ปัจจุบัน)</p>
       </div>
 
       {/* Add button for more */}

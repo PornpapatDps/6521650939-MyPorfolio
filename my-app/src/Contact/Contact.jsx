@@ -38,7 +38,7 @@ const Contact = () => {
 
         {/* Contact Information Section */}
         <div className="space-y-6 text-xl text-gray-700 mb-10">
-          <div>
+          <div>  
             <p className="font-semibold text-gray-800">Email (KU):</p>
             <a href="mailto:pornpapat.d@ku.th" className="text-blue-600 hover:text-blue-800">
               pornpapat.d@ku.th

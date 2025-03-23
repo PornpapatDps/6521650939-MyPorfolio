@@ -15,9 +15,12 @@ const Home = () => {
           <h2 className="text-xl sm:text-4xl font-semibold text-gray-800">
             นางสาว พรปภัสร์ ดวงเพชรแสง
           </h2>
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">
+          ตำแหน่ง: Frontend Developer
+          </h2>
           <p className="text-lg sm:text-xl text-gray-800">
             ดิฉันเป็นนิสิตชั้นปีที่3 ภาคพิเศษ สาขาเทคโนโลยีสารสนเทศ <br/> คณะศิลปศาสตร์และวิทยาศาสตร์ มหาวิทยาเกษตรศาสตร์
-            <br/> วิทยาเขตกำแพงแสน สนใจในการพัฒนาเว็บไซต์ และการเขียนโปรแกรม
+            <br/> วิทยาเขตกำแพงแสน 
           </p>
           <Link to="/about">
             <button className="bg-red-800 hover:bg-red-600 text-white text-lg sm:text-2xl py-2 px-6 rounded">

@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { FaCertificate } from "react-icons/fa";
 
 import cssBasic from "../../src/assets/Css-B.png";
@@ -10,8 +10,14 @@ import C from "../../src/assets/C.jpg";
 import st1 from "../../src/assets/นิสิตดีเด่น2565.jpg";
 import st2 from "../../src/assets/นิสิตดีเด่น2566.jpg";
 import st3 from "../../src/assets/อบรมภาวะผู้นำ.jpg";
+import AI from "../../src/assets/AI.png";
 
 const certificates = [
+  {
+    title: "อบรมหลักสูตรเปิดโลกทัศน์ AI และความปลอดภัยทางไซเบอร์",
+    Certificate: "Work smarter with AI using Microsoft Copilot",
+    image: AI,
+  },
   {
     title: "ภาษา C",
     Certificate: "ทักษะการอบรมการเขียนคอมพิวเตอร์ด้วยภาษา C 12 ชั่วโมง",
@@ -61,25 +67,28 @@ const certificates = [
 
 const Certificate = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isZoomed, setIsZoomed] = useState(false);  // สถานะสำหรับขยายรูป
+
+  const handleImageClick = () => {
+    setIsZoomed(!isZoomed); // สลับสถานะขยาย/ย่อรูป
+  };
 
   return (
     <div className="w-full py-10 px-5 bg-white min-h-screen">
-      <h1 className="text-4xl font-bold text-center mb-5x ">My Certificates</h1>
-      <p className="text-2xl text-center mb-10"> ใบเกียรติบัตร สายคอมพิวเตอร์ ด้านกิจกรรมและอื่นๆ</p>
+      <h1 className="text-4xl font-bold text-center mb-5x">My Certificates</h1>
+      <p className="text-2xl text-center mb-10">ใบเกียรติบัตร สายคอมพิวเตอร์ ด้านกิจกรรมและอื่นๆ</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {certificates.map((cert, index) => (
           <div
             key={index}
             className="bg-gray-100 p-6 rounded-lg shadow hover:bg-red-600 hover:text-white transition duration-300 cursor-pointer"
-            onClick={() => setSelectedImage(cert.image)}
           >
             <div className="flex items-center mb-4">
               <FaCertificate className="text-4xl mr-4" />
               <div>
                 <h2 className="text-xl font-bold">{cert.title}</h2>
                 <p className="text-sm">Certificate: {cert.Certificate}</p>
-                
               </div>
             </div>
             <div className="mt-4">
@@ -87,6 +96,7 @@ const Certificate = () => {
                 src={cert.image}
                 alt={cert.title}
                 className="w-full h-48 object-contain rounded-md shadow"
+                onClick={() => setSelectedImage(cert.image)}  // กดที่รูปเพื่อเปิดโมดอล
               />
             </div>
           </div>
@@ -97,10 +107,16 @@ const Certificate = () => {
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setSelectedImage(null)}  // คลิกที่พื้นหลังเพื่อปิดโมดอล
         >
           <div className="max-w-3xl w-full p-4">
-            <img src={selectedImage} alt="Certificate" className="w-full rounded-lg shadow-lg" />
+            <img
+              src={selectedImage}
+              alt="Certificate"
+              className={`w-full rounded-lg shadow-lg transition-all duration-300 ${
+                isZoomed ? "scale-150" : "scale-100"}`} // เพิ่มคลาสขยาย/ย่อรูป
+              onClick={handleImageClick}  // กดที่ภาพเพื่อขยาย/ย่อ
+            />
           </div>
         </div>
       )}
